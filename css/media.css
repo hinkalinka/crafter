@@ -1,0 +1,34 @@
+@keyframes rotation {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
+@media (max-width:  990.99px){
+	header{
+		display: none;
+	}
+	.about{
+	position: relative;
+	width: 100%;
+	margin: auto;
+	}
+	.id_beer h1{
+		font-size: 30px;
+	}
+}
+
+@media (max-width:  870.99px){
+	.hero{
+		font-size: 2em;
+	}
+	.id_beer h1{
+		font-size: 20px;
+	}
+}
+@media (max-width:  425.99px){
+
+}
