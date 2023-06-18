@@ -24,7 +24,6 @@
         <div class="container header__container">
           			<div class="nav__menu">
           				<div class="logo__img">
-          					<a href="https://www.flaticon.com/ru/free-icons/-" title="крышка от бутылки иконки"><img src="image/logo.png"></a>
           				</div>
           				<div class="logo__text">
               			<h1 class="hero__title">CRAFTER</h1>
