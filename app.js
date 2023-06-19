@@ -9,7 +9,7 @@ console.log('Server requeste');
 
 res.setHeader('Content-Type','text/php');
 
-const createPath = (page) => path.resolve(__dirname, '../', `${page}.php`);
+const createPath = (page) => path.resolve(__dirname, '', `${page}.php`);
 
 let basePath = '';
 
