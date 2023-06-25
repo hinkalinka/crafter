@@ -9,6 +9,28 @@ html{
 	box-sizing: inherit;
 }
 
+*,
+html *
+{
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-orange) var(--color-light);
+}
+
+*::-webkit-scrollbar,
+html *::-webkit-scrollbar {
+  height: 1px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track,
+html *::-webkit-scrollbar-track {
+  background: orange;
+}
+*::-webkit-scrollbar-thumb,
+html *::-webkit-scrollbar-thumb {
+  background-color: var(--color-light);
+  border: 3px solid var(--color-orange);
+}
+
 a {
 	color: inherit;
 	text-decoration: none;
@@ -20,7 +42,7 @@ img{
 
 @font-face{
 	font-family: 'Inter';
-	src: url("../fonts/Inter-LightBETA.woff2") format('woff2');
+	src: url("../Inter-LightBETA.woff2") format('woff2');
 	font-display: swap;
 	font-weight: 300;
 	font-style: normal;
@@ -28,7 +50,7 @@ img{
 
 @font-face{
 	font-family: 'Inter';
-	src: url("../fonts/Inter-Medium.woff2") format('woff2');
+	src: url("../Inter-Medium.woff2") format('woff2');
 	font-display: swap;
 	font-weight: 500;
 	font-style: normal;
@@ -36,7 +58,7 @@ img{
 
 @font-face{
 	font-family: 'Inter';
-	src: url("../fonts/Inter-Regular.woff2") format('woff2');
+	src: url("../Inter-Regular.woff2") format('woff2');
 	font-display: swap;
 	font-weight: 400;
 	font-style: normal;
@@ -44,7 +66,7 @@ img{
 
 @font-face{
 	font-family: 'Inter';
-	src: url("../fonts/Inter-Bold.woff2") format('woff2');
+	src: url("../Inter-Bold.woff2") format('woff2');
 	font-display: swap;
 	font-weight: 700;
 	font-style: normal;
@@ -52,7 +74,7 @@ img{
 
 @font-face{
 	font-family: 'Inter';
-	src: url("../fonts/Inter-SemiBold.woff") format('woff');
+	src: url("../Inter-SemiBold.woff") format('woff');
 	font-display: swap;
 	font-weight: 600;
 	font-style: normal;
@@ -61,8 +83,7 @@ img{
 body{
 	font-family: 'Inter', sans-serif;
 	position: relative;
-	background-color: #dedede;
-	/*background-image: url("../images/body1.jpg");*/
+	background-color: var(--color-dark);
 }
 
 :root{
@@ -71,6 +92,7 @@ body{
 	--color-dark:  #1D1D1F;
 	--color-good: #DFE6E6;
 	--color-orange: #ff6900;
+	--color-light-gray: #fff4e2;
 	--offset:  190px;
 }
 
@@ -104,120 +126,90 @@ body{
 	margin: 0;
 	list-style: none;
 }
-
+/*HEADER*/
 header{
-	position: fixed;
-	top:0;	
-	width: 15%;
-	height: 100%;
-
-	font-family: Days Sans Black;
-  border-right: solid 4px var(--color-dark);
+	width: 100%;
+	font-weight: 600;
 }
 .nav__menu{
 	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: flex-start;
+	color: var(--color-light);
+	border-bottom: solid 1px var(--color-light);
 }
 
 .nav__link{
-	padding: 20px;
-	font-weight: 400;
+	padding: 20px 40px;
 	font-size: 20px;
+	font-weight: 600;
+	border-right: solid 1px var(--color-light);
 	text-transform: uppercase;
+}
+
+.nav__item:not(:last-child){
+	margin: 0 20px;
 }
 
 .nav__link:hover{
 	text-shadow: 3px 3px var(--color-orange);
 	-webkit-transition: all 0.3s ease;;
-  -moz-transition: all 0.3s ease;;
-  -o-transition: all 0.3s ease;;
-  transition: all 0.3s ease;
-}
-
-.logo__img{
-	margin: 20px auto;
-	padding:  20px;
-	width: 50%;
-	animation-name: rotation;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-
-.logo__text{
-	width: 60%;
-	margin: 20px auto;
-	padding: 20px;
-}
-
-.logo__nav{
-	width: 60%;
-	margin: 20px auto;
-	display: flex;
-	flex-direction: column;
-}
-
-.hero__title{
-	text-align: left;
-	margin: 0;
-	font-weight: 600;
-	font-size: 30px;
-}
-.hero__title__down{
-	margin: 0;
-	text-align: left;
-	font-weight: 100;
-	font-size: 15px;
+  	-moz-transition: all 0.3s ease;;
+  	-o-transition: all 0.3s ease;;
+  	transition: all 0.3s ease;
 }
 
 /*После футера*/
 
 .main{
-	width: 80%;
-	position: relative;
+	width: 100%;
 }
 
 .about{
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 85%;
+	color: var(--color-light);
+	margin: 0 auto;
+	width: 80%;
 }
 
 .head__row{
-	width: 90%;
+	width: 100%;
 	height: 600px;
 	background-color: var(--color-orange);
 	margin: 0px auto;
-	background-image: url("../image/bg__head.jpg");
+	background-image: url("../bg__head.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	box-shadow: 18px 18px var(--color-orange);
 }
 
 .row{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+  align-items: center;
 	width: 100%;
 	margin: 60px auto;
 }
 
 .hero{
-	width: 70%;
-	margin: 5%;
+	max-width: 70%;
 	font-size: 3em;
 	line-height: 1.25;
 	font-weight: 600;
   cursor: text;
 }
 
+.heart{
+	padding:  20px;
+	width: 200px;
+
+}
+
 .head__wrap{
 	padding: 20px;
-	border-bottom: solid 4px var(--color-dark);
+	border-bottom: solid 4px var(--color-light);
 }
 
 .head__wrap_second{
-	padding: 50px;
 	border-bottom: solid 4px var(--color-dark);
 }
 
@@ -228,7 +220,8 @@ header{
 }
 
 .mini__row{
-	width: 30%;
+	text-align: center;
+	width: 400px;
 	margin: 0;
 	padding: 0;
 }
@@ -237,16 +230,6 @@ header{
 	width: 40%;
 }
 
-.head__row_second{
-	width: 90%;
-	height: 600px;
-	background-color: var(--color-orange);
-	margin: 0px auto;
-	background-image: url("../image/kran.jpg");
-	background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
 
 /*Пиво и краны*/
 
@@ -259,11 +242,9 @@ header{
 }
 
 .hero__beer{
-	width: 60%;
 	margin: 2%;
 	font-size: 3em;
 	line-height: 1.25;
-	font-family: Univers 45 Light;
 	font-weight: 600;
   cursor: text;
 }
@@ -276,6 +257,10 @@ header{
 	width: 90%;
 	border: 2px solid;
 	box-shadow: 5px 5px var(--color-dark);
+}
+
+.beer_head{
+	box-shadow: 10px 10px var(--color-orange);
 }
 
 .id_beer:hover{
@@ -305,7 +290,7 @@ header{
 	height: 400px;
 	background-color: var(--color-orange);
 	margin: 0px auto;
-	background-image: url("../image/wrap_foto.jpg");
+	background-image: url("../wrap_foto.jpg");
 	background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -313,3 +298,48 @@ header{
 }
 
 
+/*ошибка*/
+
+.head__wrap__error{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20%;
+	width: 100%;
+	height: 100%;
+	font-style: italic;
+}
+
+.hero__error{
+	margin: 0;
+	font-size: 4.5em;
+	font-weight: 600;
+  cursor: text;
+}
+
+/*ЕДА*/
+
+.food__wrap{
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+.food{
+	width: 40%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	border: solid 2px var(--color-dark);
+	padding: 20px;
+}
+
+.food h3{
+	width: 400px;
+	font-size: 15px;
+}
+
+.food img{
+	width: 100%;
+}

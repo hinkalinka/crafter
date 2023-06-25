@@ -24,6 +24,7 @@
         <div class="container header__container">
           			<div class="nav__menu">
           				<div class="logo__img">
+          					<img src="/image/logo.png">
           				</div>
           				<div class="logo__text">
               			<h1 class="hero__title">CRAFTER</h1>
